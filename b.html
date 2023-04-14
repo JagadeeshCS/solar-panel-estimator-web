@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+
+    label {
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .box {
+        background-color: #d9d9d9;
+        padding: 70px;
+        border-radius: 40px;
+        box-shadow: 0 10 10px rgba(0,0,0,0.2);
+      }
+
+    input[type="number"],
+    input[type="text"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    body {
+  background-image: url("/pexels-francesco-ungaro-281260.jpg");
+  background-size: cover;
+}
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    #panels_required,
+    #total_panel_cost,
+    #payback_month {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    form {
+  background-color: rgba(255, 255, 255, 0.5); /* Add transparency to the form */
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 500px;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(59, 33, 94);
+}
+
+.topnav a.active {
+  background-color: #02070c;
+  color: white;
+}
+    
+  </style>
+  <script src="e1.js"></script>
+
+  <div class="topnav">
+    <a class="active" href="solar.html">Home</a>
+    <a href="a.html">Energy
+        Consumption</a>
+    <a href="b.html">Solar Panel
+        Estimation</a>
+    <a href="c.html">Energy
+        Consumption</a>
+  </div>
+
+</head>
+<body>
+  <center><h1 style="color: rgb(245, 242, 242);"><u><b>Panel Estimation</b></u></h1></center>
+  <form onsubmit="cal(); return false;">
+    <label for="annual_consumption"><b>Annual Electricity Consumption (units):</b></label>
+    <input type="number" id="annual_consumption" name="annual_consumption"><br>
+
+    <label for="cost_per_unit"><b>Cost of Electricity per Unit (₹):</b></label>
+    <input type="number" id="cost_per_unit" name="cost_per_unit"><br>
+     
+    <p><b>Enter panel type (1.Monocrystalline,2.Polycrystalline):</b></p>
+    <input type="text" id="panel_type" name="panel type"><br>
+    <button type = "submit">Calculate</button>
+  </form>
+  <div class = "box">
+  <br><hr>
+<center>
+  <p><b>Your Report</b></p>
+  <p>Required number of solar panels:</p>
+  <p id="panels_required"></p>
+  <p>Total cost of solar panels: </p>
+  <p id="total_panel_cost"></p> 
+  <p>Payback Months:</p>
+  <p id="payback_month"></p>
+  <p><b>Battery suggestion: </b></p>
+  <p id="battery"></p>
+  <p><b>Inverter suggestion: </b></p>
+  <p id="invertor"></p>
+  <button onclick="window.print()">Print Your Report</button>
+</center>
+<hr>
+</div>
+</body>
+</html>

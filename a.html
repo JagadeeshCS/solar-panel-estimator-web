@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+}
+.column {
+  flex: 33.33%;
+  padding: 10px;
+}
+input[type=number], select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 7px 0;
+  display: inline-block;
+  border: 2px solid rgb(251, 248, 248);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form {
+    font-weight: bold;
+  }
+body {
+  background-image: url('/bga.jpg');
+  background-repeat: repeat;
+}
+img {
+            padding: 10px;
+            display: inline-block;
+            margin: 10px;
+            max-width: auto;
+            height: auto;
+}
+button {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        height: 60px;
+        font-size:23px;
+        font-weight: bold;
+        background-color: aqua;
+      }
+    button:hover {
+        background-color: aquamarine;
+        cursor: pointer;
+      }
+
+      
+ 
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(59, 33, 94);
+}
+
+.topnav a.active {
+  background-color: #4083b9;
+  color: white;
+}
+</style>
+
+<div class="topnav">
+    <a class="active" href="solar.html">Home</a>
+    <a href="a.html">Energy
+        Consumption</a>
+    <a href="b.html">Solar Panel
+        Estimation</a>
+    <a href="c.html">Energy
+        Consumption</a>
+  </div>
+
+</head>
+<body>
+  <h1 align="center" style="color:aqua;">Enter your appliances information </h1>
+    <div class="row">
+        <div class="column">
+          <img src="tv.jpg" alt="Television"  style="width:300px;"><br><br>
+         </div>
+        <form >
+        <label style="color:white";for="fname">Time of usage (hours):</label>
+        <input type="number" id="tvT" name="fname"><br><br>
+        <label style="color: white"for="lname">Quantity (number):</label>
+        <input type="number" id="tvQ" name="lname"><br><br>
+        <label style="color: white";for="lname">Watts (consumption):</label>
+        <input type="number" id="tvW" name="watts"><br><br>
+        </form>
+       
+        <div class="column">
+          <img src="ac.jpg" alt="Air conditioner"  style="width:350px">
+        </div>
+        
+        <form >
+        <label style="color: white"for="fname">Time of usage (hours):</label>
+        <input type="number" id="acT" name="fname"><br><br>
+        <label style="color: white"for="lname">Quantity (number):</label>
+        <input type="number" id="acQ" name="lname"><br><br>
+        <label style="color: white"for="lname">Watts (consumption):</label>
+        <input type="number" id="acW" name="watts"><br><br>
+      </div>  
+      </form>
+      <div class="row">
+        <div class="column">
+          <img src="fridge.jpg" alt="Refridgerator" style="width:250px;"><br><br>
+        </div> 
+        
+        <form >
+        <label style="color: white"for="fname">Time of usage (hours):</label>
+        <input type="number" id="fridgeT" name="fname"><br><br>
+        <label style="color: white"for="lname">Quantity (number):</label>
+        <input type="number" id="fridgeQ" name="lname"><br><br>
+        <label style="color: white"for="lname">Watts (consumption):</label>
+        <input type="number" id="fridgeW" name="watts"><br><br>
+        </form>
+        
+        <div class="column">
+          <img src="light.jpg" alt="Light" style="width:90%">
+        </div>
+        
+        <form >
+        <label style="color: white"for="fname">Time of usage (hours):</label>
+        <input type="number" id="lightT" name="fname"><br><br>
+        <label style="color: white"for="lname">Quantity (number):</label>
+        <input type="number" id="lightQ" name="lname"><br><br>
+        <label style="color: white"for="lname">Watts (consumption):</label>
+        <input type="number" id="lightW" name="watts"><br><br>
+      </div>  
+      </form>
+      <div class="row">
+        <div class="column">
+          <img src="wash.jpg" alt="wash" style="width:250px;"><br><br>
+        </div> 
+        
+        <form >
+        <label style="color: white"for="fname">Time of usage (hours):</label>
+        <input type="number" id="washT" name="fname"><br><br>
+        <label style="color: white"for="lname">Quantity (number):</label>
+        <input type="number" id="washQ" name="lname"><br><br>
+        <label style="color: white"for="lname">Watts (consumption):</label>
+        <input type="number" id="washW" name="watts"><br><br>
+        </form>
+        
+        <div class="column">
+          <img src="fan.jpg" alt="Ceiling Fan" style="width:330px" padding="20px">
+        </div>
+        
+        <form >
+        <label style="color: white"for="fname">Time of usage (hours):</label>
+        <input type="number" id="fanT" name="fname"><br><br>
+        <label style="color: white"for="lname">Quantity (number):</label>
+        <input type="number" id="fanQ" name="lname"><br><br>
+        <label style="color: white"for="lname">Watts (consumption):</label>
+        <input type="number" id="fanW" name="watts"><br><br>
+      </div> 
+      </form>
+    
+       <form action ="a1.html">
+        <button onclick="add()">Submit</button>
+        <br>
+        </form>
+      <script>
+        function add(){
+        var tvT = parseInt(document.getElementById('tvT').value);
+        var acT = parseInt(document.getElementById('acT').value);
+        var fridgeT = parseInt(document.getElementById('fridgeT').value);
+        var lightT = parseInt(document.getElementById('lightT').value);
+        var washT = parseInt(document.getElementById('washT').value);
+        var fanT = parseInt(document.getElementById('fanT').value);
+        var tvQ = parseInt(document.getElementById('tvQ').value);
+        var acQ = parseInt(document.getElementById('acQ').value);
+        var fridgeQ = parseInt(document.getElementById('fridgeQ').value);
+        var lightQ = parseInt(document.getElementById('lightQ').value);
+        var washQ = parseInt(document.getElementById('washQ').value);
+        var fanQ = parseInt(document.getElementById('fanQ').value);
+        var tvW = parseInt(document.getElementById('tvW').value);
+        var acW = parseInt(document.getElementById('acW').value);
+        var fridgeW = parseInt(document.getElementById('fridgeW').value);
+        var lightW = parseInt(document.getElementById('lightW').value);
+        var washW = parseInt(document.getElementById('washW').value);
+        var fanW = parseInt(document.getElementById('fanW').value);
+
+        var tv = tvT * tvQ * tvW;
+        var ac = acT* acQ * acW;
+        var fridge = fridgeT * fridgeQ * fridgeW;
+        var light = lightT * lightQ * lightW;
+        var wash = washT * washQ * washW;
+        var fan = fanT * fanQ * fanW;
+
+        var cpd = tv+ac+fridge+light+wash+fan; //consumption per day
+        var cpm = cpd * 30; // consumption per month
+        var cpy = cpm * 12; // consumption per year
+
+        localStorage.setItem("cond", cpd);
+        window.location.href="a1.html"
+
+        localStorage.setItem("conm", cpm);
+        window.location.href="a1.html"
+
+        localStorage.setItem("cony", cpy);
+       window.location.href="a1.html"
+        }
+      </script>
+     
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        background-image: url('/abg.jpg');
+        background-size: cover;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .box {
+        background-color: #d9d9d9;
+        padding: 70px;
+        border-radius: 100px;
+        box-shadow: 0 10 10px rgba(0,0,0,0.2);
+      }
+      
+      button {
+        margin: 0 auto;
+        display: block;
+      }
+      
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+      
+      .logo img {
+        height: 80px;
+        margin-right: 10px;
+      }
+      
+      h1 {
+        color: rgb(121, 13, 121);
+        font-size: 2.5rem;
+        margin: 0;
+      }
+      
+      p {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+            <div class="logo">
+                <img src="/energy-consumption.png" alt="Your Logo">
+            </div>
+            <h1 style="color: rgb(6, 31, 172);">Your Consumption </h1>
+            <br>
+            <p><b>Usage per day (units):</b></p>
+            <br>
+            <p id = "cd"> </p>
+              <p><b>Usage per month (units):</b></p>
+              <br>
+            <p id = "cm"> </p>
+            <p><b>Usage per year (units) :</b></p>
+            <br>
+            <p id = "cy"> </p>
+            <button onclick="window.print()">Print Report</button><br>
+            <form action ="solar.html">
+              <button type = "submit">home</button>
+              </form>
+          </div>
+        </div>
+        <script>
+          var a = localStorage.getItem("cond");
+          document.getElementById("cd").innerText = a/1000;
+          var b = localStorage.getItem("conm");
+          document.getElementById("cm").innerText = b/1000;
+          var c = localStorage.getItem("cony");
+          document.getElementById("cy").innerText = c/1000;
+        </script>
+</body>
+</html>
